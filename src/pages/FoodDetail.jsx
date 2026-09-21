@@ -25,17 +25,18 @@ function FoodDetail() {
   }
 
   const icon = () => {
-    if(category.toLowerCase().includes("lievitati")){
+    const catNormalized = category.toLowerCase();
+    if(catNormalized.includes("lievitati")){
       return <Wheat size={20} strokeWidth={1.8} />
-    }else if(category.toLowerCase().includes("primi")){
+    }else if(catNormalized.includes("primi")){
       return <CookingPot size={20} strokeWidth={1.8} />
-    }else if(category.toLowerCase().includes("secondi")){
+    }else if(catNormalized.includes("secondi")){
       return <Beef size={20} strokeWidth={1.8} />
-    }else if(category.toLowerCase().includes("dolci")){
+    }else if(catNormalized.includes("dolci")){
       return <CakeSlice size={20} strokeWidth={1.8} />
-    }else if(category.toLowerCase().includes("contorni")){
+    }else if(catNormalized.includes("contorni")){
       return <Utensils size={20} strokeWidth={1.8} />
-    }else if(category.toLowerCase().includes("antipasti")){
+    }else if(catNormalized.includes("antipasti")){
       return <Soup size={20} strokeWidth={1.8} />
     }
     return null;
@@ -63,7 +64,9 @@ function FoodDetail() {
 
   return (
     <div>
+      
       <NavBar/>
+
       <div className="mx-3 mt-5">
 
         <div className="mb-5">
@@ -72,20 +75,20 @@ function FoodDetail() {
 
         <div className="md:flex">
          
-          <div className="w-full lg:w-[60%]">
+          <div className="sm:w-full">
             <img
-              className="w-full aspect-[4/3] object-cover object-bottom rounded-lg"
+              className="h-[280px] w-full max-w-[600px] object-cover object-top rounded-lg md:h-[380px]"
               src={imageUrl}
               alt={`image of ${title}`}
             />
           </div>
 
-          <div className="md:flex flex-col">
-            <div className="mt-4 md:ml-4">
+          <div className="md:flex flex-col lg:flex-1">
+            <div className="mt-4 md:ml-2 lg:ml-4">
               <p className="text-green-900 font-medium">IL PIATTO</p>
               <p>{description}</p>
             </div>
-            <div className="md:ml-4 mt-4">
+            <div className="md:ml-2 mt-4">
               <p className="font-medium text-xl">Ingriedenti Principali</p>
               <div className="flex flex-wrap gap-3 mt-3">
                 {Array.isArray(ingredients) ? (ingredients.map((i) =>  

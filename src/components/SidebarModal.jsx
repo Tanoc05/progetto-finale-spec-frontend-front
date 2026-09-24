@@ -10,12 +10,10 @@ function SidebarModal({onClose}) {
 
     return createPortal(
         <div className="fixed inset-0 z-50 flex justify-end bg-black/40">
-            <div className="w-[50%] h-full bg-white shadow-xl flex flex-col justify-between">
-                <div>
+            <div className="w-[80%] md:w-[50%] h-full bg-white shadow-xl flex flex-col justify-between">
                     <div className="">
-
                         <div className="flex items-center justify-between w-[90%] mx-auto pt-4 pb-4 border-b border-slate-200">
-                            <h2 className="text-center text-2xl font-bold mb-3">I Tuoi Preferiti</h2>
+                           <h2 className="text-center text-2xl font-bold mb-3">I Tuoi Preferiti</h2>
                             <button onClick={onClose} className="border border-slate-200 px-4 py-2 rounded-full mr-2">x</button>
                         </div>
 
@@ -31,9 +29,7 @@ function SidebarModal({onClose}) {
                         <div className="mx-3 mt-5">
                             {favourites.map(f => <NavbarFoodCard key={f.id} props={f}/>)}
                         </div>
-
                     </div>
-                </div>
             </div>
         </div>,
         document.body

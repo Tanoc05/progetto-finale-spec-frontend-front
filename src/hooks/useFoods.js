@@ -10,7 +10,10 @@ function useFoods() {
     useEffect(() => {
         fetch(API)
         .then(res => res.json())
-        .then(data => setFoods(data))
+        .then(data => {
+            console.log(`API FOOD ritorna : ${data}`)
+            setFoods(data)
+        })
         .catch(err => console.error(err))
     },[])
 

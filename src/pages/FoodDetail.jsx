@@ -75,7 +75,7 @@ function FoodDetail() {
 
         <div className="md:flex">
          
-          <div className="sm:w-full">
+          <div className="">
             <img
               className="h-[280px] w-full max-w-[600px] object-cover object-top rounded-lg md:h-[380px]"
               src={imageUrl}
@@ -83,7 +83,7 @@ function FoodDetail() {
             />
           </div>
 
-          <div className="md:flex flex-col lg:flex-1">
+          <div className="md:flex flex-col">
             <div className="mt-4 md:ml-2 lg:ml-4">
               <p className="text-green-900 font-medium">IL PIATTO</p>
               <p>{description}</p>

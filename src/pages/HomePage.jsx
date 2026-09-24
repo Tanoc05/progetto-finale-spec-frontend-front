@@ -52,9 +52,9 @@ function HomePage() {
 
             <div className="mx-3 mt-6">
                 <p>Filtro per categoria</p>
-                <div className="w-[90%] lg:w-[60%] flex justify-between mt-4">
+                <div className="w-[80%] lg:w-[35%] flex justify-between mt-4">
                     {categorie.map(c => {
-                        return <button onClick={() => {setCategoryQuery(c.toLowerCase())}} className="border border border-slate-200 py-2 pl-3 pr-4 rounded-full hover:border-slate-300 focus:outline-none focus:text-white focus:bg-black transition-colors duration-200" key={c}>{c}</button>
+                        return <button onClick={() => {setCategoryQuery(c.toLowerCase())}} className={`border border-slate-200 py-2 pl-3 pr-4 rounded-full hover:border-slate-300 focus:outline-none focus:text-white focus:bg-black transition-colors duration-200 ${categoryQuery === c.toLowerCase() && "bg-black text-white"}`} key={c}>{c}</button>
                     })}
                 </div>
             </div>
